@@ -96,5 +96,5 @@ bool Monom::operator!=(const Monom& other) const
 
 bool Monom::isZero() const
 {
-    return (abs(coef)<1e-6);
+    return (abs(coef) < 1e-6);
 }

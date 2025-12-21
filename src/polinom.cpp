@@ -12,7 +12,6 @@ void Polinom::Podobniy()
     {
         return;
     }
-    Sort();
     TSinglyList<Monom> newList;
     TSinglyList<Monom>::Iterator it = begin();
     Monom cur = *it;
@@ -42,6 +41,7 @@ void Polinom::Podobniy()
     {
         PushBack(*it);
     }
+    Sort();
 }
 
 void Polinom::Parsing(const string& str)
@@ -69,7 +69,7 @@ void Polinom::Parsing(const string& str)
 
         double coef = 1.0;
         string coefStr = "";
-        while (i < s.length() && (isdigit(s[i]) || s[i] == '.' || s[i] == 'e' || s[i] == 'E'||(coefStr.size()==0 && s[i]=='-')))
+        while (i < s.length() && (isdigit(s[i]) || s[i] == '.' || s[i] == 'e' || s[i] == 'E' || (coefStr.size() == 0 && s[i] == '-')))
         {
             coefStr += s[i];
             i++;

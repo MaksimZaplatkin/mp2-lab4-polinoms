@@ -85,10 +85,15 @@ public:
     Polinom operator *(const Polinom& other) const;
     Polinom operator *(Monom& mono) const
     {
-        vector <Monom> monoms;
-        monoms.push_back(mono);
-        Polinom other(monoms);
-        return (*this * other);
+        Polinom res;
+        TSinglyList<Monom>::Iterator it1 = begin();
+        while (it1 != end())
+        {
+            res.set((*it1) * (mono));
+            ++it1;
+        }
+        res.Podobniy();
+        return res;
     }
     Polinom operator *(double scalar) const;
     friend Polinom operator*(double scalar, const Polinom& poli)

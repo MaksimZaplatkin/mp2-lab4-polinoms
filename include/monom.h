@@ -24,7 +24,7 @@ public:
     {
         if (sz != other.sz)
         {
-            return false
+            return false;
         }
         TNode* cur = pFirst;
         TNode* curp = other.pFirst;
@@ -48,6 +48,9 @@ public:
     }
     TSinglyList(const vector<T>& v)
     {
+        pFirst = nullptr;
+        pLast = nullptr;
+        sz = 0;
         sz = v.size();
         for (size_t i = 0; i < v.size(); i++)
         {
@@ -56,6 +59,9 @@ public:
     }
     TSinglyList(const TSinglyList& list)
     {
+        pFirst = nullptr;
+        pLast = nullptr;
+        sz = 0;
         TNode* cur = list.pFirst;
         while (cur)
         {
